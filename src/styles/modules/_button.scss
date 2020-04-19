@@ -1,0 +1,14 @@
+
+.btn {
+    background: none;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    padding: 0.5em 1.5em;
+    background: $brand-primary;
+    color: $white;
+    font-weight: $headings-font-weight;
+    border-radius: 2px;
+    outline: none;
+    font-size: 1em;
+  }

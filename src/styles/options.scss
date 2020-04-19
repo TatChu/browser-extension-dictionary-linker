@@ -1,0 +1,32 @@
+@import "modules/reset";
+@import "modules/variables";
+@import "modules/grid";
+@import "modules/layout";
+@import "modules/utilities";
+@import "modules/form";
+@import "modules/button";
+
+.heading {
+  margin: 1em auto;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #eee;
+
+  .lead {
+    margin-top: 0.2em;
+    font-style: italic;
+    font-size: 14px;
+  }
+}
+
+.content {
+  min-height: 300px;
+}
+
+.form-actions{
+  margin-top: 10px;
+}
+
+#dictionary-url{
+  max-width: 80%;
+  display: block;
+}
