@@ -1,6 +1,6 @@
 import storage from "./utils/storage";
 import extension from "./utils/extension";
-var dictionaryUrl = 'https://translate.google.com/#view=home&op=translate&sl=en&tl=vi&text={word}'
+var dictionaryUrl = 'https://dictionary.cambridge.org/dictionary/english/{word}'
 
 storage.get('dictionaryUrl', function (resp) {
     console.log(222, resp)
