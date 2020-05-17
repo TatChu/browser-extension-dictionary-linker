@@ -1,6 +1,6 @@
 import storage from "./utils/storage";
 import extension from "./utils/extension";
-var dictionaryUrl = 'https://dictionary.cambridge.org/dictionary/english/{word}'
+var dictionaryUrl = 'https://www.collinsdictionary.com/dictionary/english/{word}'
 
 storage.get('dictionaryUrl', function (resp) {
     console.log(222, resp)
