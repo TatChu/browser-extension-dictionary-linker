@@ -8,9 +8,9 @@
   </head>
   <body class="wrap">
     <div class="grid">
-      <div class="unit whole center-on-mobiles">
+      <div class="unit whole">
         <div class="heading">
-          <h1>Dictionary Linker Configurations</h1>
+          <h1>Dictionary Configurations</h1>
           <p class="lead">Configure your favorite dictionary</p>
         </div>
       </div>
@@ -18,22 +18,31 @@
 
     <section class="content">
       <div class="grid">
-        <div class="unit whole center-on-mobiles">
+        <div class="unit whole">
           <div class="option">
             <h5></h5>
             <div class="form-group">
               <label>Enter your favorite dictionary url</label>
-              <input class="form-control" id="dictionary-url" type="text"
+              <input class="form-control border" id="dictionary-url" type="text"
                 placeholder="Use {word} as placeholder"
                 name="dictionary-url" />
+              <div class="form-builtin-options">
+                <span><i>or choose builtin dictionary:</i></span>
+                <ul id="suggess-list">
+                  <!-- Render from script -->
+                </ul>
+              </div>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="display: none;">
               <label><input class="form-check" type="checkbox"
-                id="open-in-one=tab" /> Open dictionary in only one tab</label>
+                  id="open-in-one=tab" /> Open dictionary in only one tab</label>
+            </div>
+            <div id="alert-container" class="alert center-on-mobiles d-none">
+              Indicates a dangerous or potentially negative action.
             </div>
             <div class="form-actions">
               <button class="btn btn-primary" class="btn-save"
-
+              id="btn-save"
                 type="button">Save</button>
             </div>
           </div>
@@ -45,7 +54,7 @@
 
     <footer class="main-footer">
       <div class="grid">
-        <div class="unit whole center-on-mobiles">
+        <div class="unit whole">
           <p class="text-center text-muted">
             &copy; Dictionary Linker by <a href="mailto:nguyentatchu@gmail.com">Chu
               Nguyen</a>

@@ -1,7 +1,7 @@
-import extension from "./utils/extension";
-import { openDictionaryPage } from './dictionary'
+var extension = require("./utils/extension");
+var Dictionary = require ("./dictionary");
 
-let backgroundListener = function (request, sender, sendResponse) {
+var backgroundListener = function (request, sender, sendResponse) {
   console.log('backgroundListener got Message.', request, sender, sendResponse)
   if (request.action === "reload-dictionary") {
     // TODO: reload this tab if got request reload dictionary
@@ -18,6 +18,5 @@ extension.contextMenus.create({
 });
 
 function getword(info, tab) {
-  console.log(info, tab);
-  openDictionaryPage(info.selectionText)
+  Dictionary.openDictionaryPage(info.selectionText)
 }

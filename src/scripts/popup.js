@@ -1,5 +1,5 @@
-import extension from "./utils/extension";
-import { openDictionaryPage } from './dictionary'
+var extension = require ("./utils/extension");
+var Dictionary = require ("./dictionary");
 
 var popupContainer = document.getElementById("app");
 var inputWord = document.getElementById("input-word");
@@ -20,7 +20,7 @@ inputWord.addEventListener("keypress", (e) => {
 // handler submit word
 let submitSearchHandler = function (e) {
   let word = inputWord.value
-  openDictionaryPage(word)
+  Dictionary.openDictionaryPage(word)
 }
 
 // Open options page

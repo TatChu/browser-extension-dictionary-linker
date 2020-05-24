@@ -7,7 +7,7 @@
 @import "modules/button";
 
 .heading {
-  margin: 1em auto;
+  margin: 1em auto 0;
   padding-bottom: 1em;
   border-bottom: 1px solid #eee;
 
@@ -22,11 +22,42 @@
   min-height: 300px;
 }
 
-.form-actions{
+.form-actions {
   margin-top: 10px;
 }
 
-#dictionary-url{
-  max-width: 80%;
+#dictionary-url {
   display: block;
+}
+
+.border {
+  border: 1px solid;
+}
+
+.form-builtin-options {
+  margin-top: 10px;
+  .suggess-item {
+    font-weight: 400;
+    padding-left: 3px;
+  }
+  ul {
+    list-style: none;
+    padding-left: 15px;
+  }
+}
+
+.alert {
+  padding: 10px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 380px;
+  z-index: 100;
+  color: white;
+  &.error {
+    background-color: #f44336;
+  }
+  &.success {
+    background-color: green;
+  }
 }

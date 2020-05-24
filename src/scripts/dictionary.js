@@ -1,19 +1,16 @@
-import storage from "./utils/storage";
-import extension from "./utils/extension";
-var dictionaryUrl = 'https://www.collinsdictionary.com/dictionary/english/{word}'
+var storage = require ("./utils/storage");
+var extension = require ("./utils/extension");
+var Constants = require ("./domain/constant");
 
-storage.get('dictionaryUrl', function (resp) {
-    console.log(222, resp)
-    if (resp && resp.dictionaryUrl) {
-        dictionaryUrl = resp.dictionaryUrl;
-    }
+var dictionaryUrl = Constants.DEFAULT_DICTIONARY_URL;
+
+storage.get(Constants.DICTIONARY_URL_STORAGE_KEY, function (resp) {
+    dictionaryUrl = resp[Constants.DICTIONARY_URL_STORAGE_KEY] || Constants.DEFAULT_DICTIONARY_URL;
 })
-
-console.log(11, dictionaryUrl)
 
 function openDictionaryPage(word) {
     // TODO: Check if only open in one tab
-    // => Query in current tabs and reload tab if exist tab
+    // => Query in current tabs and reload tab with new url if the option open dictionary in only one tab was enabled
     // Code query tab sample    
     // extension.tabs.query({ currentWindow: true }, function (tabs) {
     //     console.log(tabs)
@@ -22,8 +19,7 @@ function openDictionaryPage(word) {
     // })
 
     if (word) {
-        const regex = /{(\s)*word(\s)*}/g;
-        let url = dictionaryUrl.replace(regex, word)
+        var url = dictionaryUrl.replace(Constants.REGEX_WORD_PLACEHOLDER, word)
         extension.tabs.create({ url });
     }
 }
